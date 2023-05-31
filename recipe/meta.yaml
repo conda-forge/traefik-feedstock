@@ -1,7 +1,6 @@
 {% set name = "traefik" %}
 {% set version = "2.10.1" %}
 {% set gomodule = "github.com/traefik/" ~ name %}
-{% set min_go = ">=1.19" %}
 
 package:
   name: {{ name }}
@@ -18,7 +17,7 @@ build:
 
 requirements:
   build:
-    - go {{ min_go }}
+    - {{ compiler('go') }}
     - go-licenses
 
 test:
@@ -33,7 +32,6 @@ about:
   license_file:
     - src/{{ gomodule }}/LICENSE.md
     - library_licenses/
-    - go-licenses.log
 
   summary: The Cloud Native Application Proxy
 
