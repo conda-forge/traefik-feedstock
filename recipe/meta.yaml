@@ -1,5 +1,6 @@
+{% set min_go = ">=1.19" %}
 {% set name = "traefik" %}
-{% set version = "2.10.1" %}
+{% set version = "2.10.3" %}
 {% set gomodule = "github.com/traefik/" ~ name %}
 {% set min_go = ">=1.19" %}
 
@@ -10,7 +11,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-v{{ version }}.src.tar.gz
-    sha256: 34c19da8a28e10e5634afd7336a9b7944dbf21bfbacf4248d0140c329ef0049f
+    sha256: eb4694ef72a8356a2acf36315e5e141027001c1eef8acade7ecb86512305d286
 
 build:
   number: 0
