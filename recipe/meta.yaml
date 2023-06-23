@@ -1,8 +1,6 @@
-{% set min_go = ">=1.19" %}
 {% set name = "traefik" %}
 {% set version = "2.10.3" %}
 {% set gomodule = "github.com/traefik/" ~ name %}
-{% set min_go = ">=1.19" %}
 
 package:
   name: {{ name }}
@@ -19,7 +17,7 @@ build:
 
 requirements:
   build:
-    - go {{ min_go }}
+    - {{ compiler('go') }}
     - go-licenses
 
 test:
