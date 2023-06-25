@@ -14,7 +14,7 @@ source:
     sha256: eb4694ef72a8356a2acf36315e5e141027001c1eef8acade7ecb86512305d286
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -34,7 +34,6 @@ about:
   license_file:
     - src/{{ gomodule }}/LICENSE.md
     - library_licenses/
-    - go-licenses.log
 
   summary: The Cloud Native Application Proxy
 

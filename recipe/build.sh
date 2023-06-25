@@ -26,7 +26,4 @@ cp dist/traefik ${PREFIX}/bin
 
 go-licenses save \
     "." \
-    --save_path "${SRC_DIR}/library_licenses/" \
-    2>&1 \
-    | tee "${SRC_DIR}/go-licenses.log" \
-    || echo "some errors: captured in go-licenses.log"
+    --save_path "${SRC_DIR}/library_licenses/"
