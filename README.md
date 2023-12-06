@@ -202,5 +202,4 @@ Feedstock Maintainers
 =====================
 
 * [@bollwyvl](https://github.com/bollwyvl/)
-<-- trigger ci -->
 
