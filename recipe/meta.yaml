@@ -21,9 +21,9 @@ requirements:
 
 test:
   commands:
-    - traefik version
-    - traefik version | grep -iE  "Version:\s+{{ version.replace(".", "\.") }}$"
-    - traefik --help
+    - traefik{{ target_goexe }} version
+    - traefik{{ target_goexe }} version | grep -iE  "Version:\s+{{ version.replace(".", "\.") }}$"
+    - traefik{{ target_goexe }} --help
 
 about:
   home: https://traefik.io
@@ -45,7 +45,5 @@ about:
   dev_url: https://{{ gomodule }}
 
 extra:
-  pins:
-    - {{ target_goexe }}
   recipe-maintainers:
     - bollwyvl
