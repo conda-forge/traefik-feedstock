@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -eux
+export | grep target
 
 # uses about 2gb
 export TMPDIR="$( pwd )/tmp"
@@ -22,7 +23,8 @@ bash script/binary
 
 mkdir -p ${PREFIX}/bin
 
-cp dist/traefik ${PREFIX}/bin
+cp dist/traefik ${PREFIX}/bin/traefik${target_goexe}
+ls -la ${PREFIX}/bin
 
 go-licenses save \
     "." \
