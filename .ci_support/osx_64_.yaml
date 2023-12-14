@@ -8,5 +8,7 @@ go_compiler:
 - go-nocgo
 macos_machine:
 - x86_64-apple-darwin13.4.0
+target_goexe:
+- ''
 target_platform:
 - osx-64
