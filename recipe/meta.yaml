@@ -12,8 +12,7 @@ source:
     sha256: 64f8fdcb907b8f6cd7431cf91607f45b576324bf224efe4ea0f3dc09e65db6a6
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
@@ -22,9 +21,9 @@ requirements:
 
 test:
   commands:
-    - traefik version
-    - traefik version | grep -iE  "Version:\s+{{ version.replace(".", "\.") }}$"
-    - traefik --help
+    - traefik{{ target_goexe }} version
+    - traefik{{ target_goexe }} version | grep -iE  "Version:\s+{{ version.replace(".", "\.") }}$"
+    - traefik{{ target_goexe }} --help
 
 about:
   home: https://traefik.io
@@ -48,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - bollwyvl
+    - sodre
