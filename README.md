@@ -209,4 +209,5 @@ Feedstock Maintainers
 =====================
 
 * [@bollwyvl](https://github.com/bollwyvl/)
+* [@sodre](https://github.com/sodre/)
 
