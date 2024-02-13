@@ -18,11 +18,11 @@ cd "src/${module}"
 
 go mod vendor
 
-bash script/binary
+make binary
 
-mkdir -p ${PREFIX}/bin
+mkdir -p "${PREFIX}/bin"
 
-cp dist/traefik ${PREFIX}/bin/traefik${target_goexe}
+cp dist/traefik "${PREFIX}/bin/traefik${target_goexe}"
 
 go-licenses save \
     "." \
