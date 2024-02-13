@@ -24,7 +24,7 @@ mkdir -p "${PREFIX}/bin"
 
 find dist
 # these end up in e.g. dist/linux/amd64/traefik or dist/darwin/arm64/traefik
-cp $(ls "dist/*/*/traefik${target_goexe}") "${PREFIX}/bin/"
+cp $(ls dist/*/*/traefik${target_goexe}) "${PREFIX}/bin/"
 
 go-licenses save \
     "." \
