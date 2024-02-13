@@ -23,7 +23,8 @@ make binary
 mkdir -p "${PREFIX}/bin"
 
 find dist
-cp dist/traefik/*/*/traefik* "${PREFIX}/bin/traefik${target_goexe}"
+# these end up in e.g. dist/linux/amd64/traefik or dist/darwin/arm64/traefik
+cp $(ls dist/traefik/*/*/traefik) "${PREFIX}/bin/traefik${target_goexe}"
 
 go-licenses save \
     "." \
