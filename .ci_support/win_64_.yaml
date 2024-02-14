@@ -1,11 +1,13 @@
+c_compiler:
+- vs2019
+cgo_compiler:
+- go-cgo
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
-go_compiler:
-- go-nocgo
 target_goexe:
 - .exe
 target_platform:
