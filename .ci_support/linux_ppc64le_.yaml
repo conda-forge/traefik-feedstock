@@ -1,7 +1,3 @@
-c_compiler:
-- gcc
-c_compiler_version:
-- '12'
 cdt_name:
 - cos7
 cgo_compiler:
