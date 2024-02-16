@@ -28,5 +28,4 @@ cp $(ls dist/*/*/*) "${PREFIX}/bin/traefik${target_goexe}"
 
 GOFLAGS="" go-licenses save \
     "." \
-    --save_path "${SRC_DIR}/library_licenses/" \
-    --ignore "$module"
+    --save_path "${SRC_DIR}/library_licenses/"
