@@ -26,7 +26,7 @@ find dist
 # exactly one should end up as dist/(darwin|linux|windows)/(amd64|arm64)/traefik
 cp $(ls dist/*/*/*) "${PREFIX}/bin/traefik${target_goexe}"
 
-go-licenses save \
+GOFLAGS="" go-licenses save \
     "." \
     --save_path "${SRC_DIR}/library_licenses/" \
     --ignore "$module"
