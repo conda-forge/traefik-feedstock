@@ -18,12 +18,14 @@ cd "src/${module}"
 
 go mod vendor
 
-bash script/binary
+make binary
 
-mkdir -p ${PREFIX}/bin
+mkdir -p "${PREFIX}/bin"
 
-cp dist/traefik ${PREFIX}/bin/traefik${target_goexe}
+find dist
+# exactly one should end up as dist/(darwin|linux|windows)/(amd64|arm64)/traefik
+cp $(ls dist/*/*/*) "${PREFIX}/bin/traefik${target_goexe}"
 
-go-licenses save \
+GOFLAGS="" go-licenses save \
     "." \
     --save_path "${SRC_DIR}/library_licenses/"
