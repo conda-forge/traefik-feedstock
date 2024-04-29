@@ -1,4 +1,4 @@
-{% set version = "2.11.2" %}
+{% set version = "3.0.0" %}
 
 package:
   name: traefik
@@ -7,7 +7,7 @@ package:
 source:
   - folder: src/github.com/traefik/traefik
     url: https://github.com/traefik/traefik/releases/download/v{{ version }}/traefik-v{{ version }}.src.tar.gz
-    sha256: 48a8b8a247991db02d4e3f9aac6db512eaea265d22f0f407ccb038d72d02a106
+    sha256: 6445c42c073c2d6e0314083b98bbdbb8510d4c8a792278e8b55dfb4aa25b3c7b
 
 build:
   number: 0
