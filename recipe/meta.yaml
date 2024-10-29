@@ -1,4 +1,4 @@
-{% set version = "3.1.7" %}
+{% set version = "3.2.0" %}
 
 package:
   name: traefik
@@ -7,7 +7,7 @@ package:
 source:
   - folder: src/github.com/traefik/traefik
     url: https://github.com/traefik/traefik/releases/download/v{{ version }}/traefik-v{{ version }}.src.tar.gz
-    sha256: 183c9d8278cbbfb6bf526e3f0178a55edf761cabeda4654742091e6eba9c4613
+    sha256: 2c9a788a6207350999a49cc086e456f1287233df3000a25e1147d7b935dc99f2
 
 build:
   number: 0
@@ -30,16 +30,13 @@ about:
   license_file:
     - src/github.com/traefik/traefik/LICENSE.md
     - library_licenses/
-
   summary: The Cloud Native Application Proxy
-
   description: |
     Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer
     that makes deploying microservices easy. Traefik integrates with your existing
     infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,
     Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.
     Pointing Traefik at your orchestrator should be the only configuration step you need.
-
   doc_url: https://doc.traefik.io/traefik
   dev_url: https://github.com/traefik/traefik
 
