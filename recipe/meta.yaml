@@ -30,16 +30,13 @@ about:
   license_file:
     - src/github.com/traefik/traefik/LICENSE.md
     - library_licenses/
-
   summary: The Cloud Native Application Proxy
-
   description: |
     Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer
     that makes deploying microservices easy. Traefik integrates with your existing
     infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,
     Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.
     Pointing Traefik at your orchestrator should be the only configuration step you need.
-
   doc_url: https://doc.traefik.io/traefik
   dev_url: https://github.com/traefik/traefik
 
