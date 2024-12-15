@@ -21,9 +21,13 @@ go mod vendor
 pushd webui
     yarn
     yarn build
+    yarn build:nc
 popd
 
-make binary
+go build \
+    -v \
+    -ldflags "-X ${module}/v3/pkg/version.Version=${PKG_VERSION}" \
+    ./cmd/traefik
 
 mkdir -p "${PREFIX}/bin"
 
