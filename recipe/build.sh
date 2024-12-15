@@ -19,9 +19,8 @@ cd "src/${module}"
 go mod vendor
 
 pushd webui
-    yarn
-    yarn build
-    yarn build:nc
+    npm install
+    npm run build:nc
 popd
 
 go build \
