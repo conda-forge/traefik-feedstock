@@ -18,6 +18,11 @@ cd "src/${module}"
 
 go mod vendor
 
+pushd webui
+    yarn
+    yarn build
+popd
+
 make binary
 
 mkdir -p "${PREFIX}/bin"

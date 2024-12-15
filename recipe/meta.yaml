@@ -11,12 +11,17 @@ source:
 
 build:
   number: 0
+  ignore_run_exports_from:
+    - nodejs
+    - yarn
 
 requirements:
   build:
     - {{ compiler('go') }}
     - go-licenses
     - make
+    - nodejs 22.*
+    - yarn
 
 test:
   commands:
