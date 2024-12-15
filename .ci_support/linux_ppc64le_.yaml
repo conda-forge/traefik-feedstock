@@ -15,4 +15,4 @@ target_goexe:
 target_platform:
 - linux-ppc64le
 yarn:
-- '3'
+- '1'

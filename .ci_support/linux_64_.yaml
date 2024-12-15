@@ -15,4 +15,4 @@ target_goexe:
 target_platform:
 - linux-64
 yarn:
-- '3'
+- '1'

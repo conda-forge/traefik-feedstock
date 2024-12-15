@@ -13,4 +13,4 @@ target_goexe:
 target_platform:
 - win-64
 yarn:
-- '3'
+- '1'
