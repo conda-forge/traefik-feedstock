@@ -1,4 +1,4 @@
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: traefik
@@ -7,16 +7,20 @@ package:
 source:
   - folder: src/github.com/traefik/traefik
     url: https://github.com/traefik/traefik/releases/download/v{{ version }}/traefik-v{{ version }}.src.tar.gz
-    sha256: 5867a58f5bc5379d31815a038fad3fc05ed9cf25e170dd8875052cbedc18d400
+    sha256: 40564d08776657f323134ebce655457b43b4d415e6dfdaaab569a985648d5a1c
 
 build:
   number: 0
+  ignore_run_exports_from:
+    - nodejs
+    - yarn
 
 requirements:
   build:
     - {{ compiler('go') }}
     - go-licenses
-    - make
+    - nodejs
+    - yarn >=1.22.22,<2
 
 test:
   commands:
