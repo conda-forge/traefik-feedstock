@@ -30,9 +30,7 @@ go build \
 
 mkdir -p "${PREFIX}/bin"
 
-find dist
-# exactly one should end up as dist/(darwin|linux|windows)/(amd64|arm64)/traefik
-cp $(ls dist/*/*/*) "${PREFIX}/bin/traefik${target_goexe}"
+cp $(find . -name traefik) "${PREFIX}/bin/traefik"
 
 GOFLAGS="" go-licenses save \
     "." \
