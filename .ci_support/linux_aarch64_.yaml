@@ -14,5 +14,3 @@ target_goexe:
 - ''
 target_platform:
 - linux-aarch64
-yarn:
-- '1'
