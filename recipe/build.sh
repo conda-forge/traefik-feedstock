@@ -8,9 +8,6 @@ mkdir -p "${TMPDIR}"
 
 export GOPATH="$( pwd )"
 export GOFLAGS="-buildmode=pie -trimpath -mod=vendor -modcacherw -ldflags=-linkmode=external"
-# consumed by `scripts/binary` below to avoid wrangling versioned flags
-export VERSION="${PKG_VERSION}"
-export DATE="$(date -u '+%Y-%m-%d_%I:%M:%S%p')"
 
 module='github.com/traefik/traefik'
 
@@ -30,8 +27,9 @@ go build \
 
 mkdir -p "${PREFIX}/bin"
 
-cp $(find . -name traefik) "${PREFIX}/bin/traefik"
+cp ./cmd/traefik "${PREFIX}/bin/"
 
-GOFLAGS="" go-licenses save \
+GOFLAGS="" \
+    go-licenses save \
     "." \
     --save_path "${SRC_DIR}/library_licenses/"
