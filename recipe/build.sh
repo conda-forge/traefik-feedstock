@@ -5,7 +5,6 @@ set -eux
 export TMPDIR="$( pwd )/tmp"
 mkdir -p "${TMPDIR}"
 
-
 export GOPATH="$( pwd )"
 export GOFLAGS="-buildmode=pie -trimpath -mod=vendor -modcacherw -ldflags=-linkmode=external"
 
@@ -13,21 +12,18 @@ module='github.com/traefik/traefik'
 
 cd "src/${module}"
 
-go mod vendor
-
 pushd webui
     yarn --ignore-scripts
     yarn build:nc
 popd
 
+go mod vendor
+
 go build \
     -v \
     -ldflags "-X ${module}/v3/pkg/version.Version=${PKG_VERSION}" \
+    -o "${PREFIX}/bin/traefik" \
     ./cmd/traefik
-
-mkdir -p "${PREFIX}/bin"
-
-cp ./cmd/traefik "${PREFIX}/bin/"
 
 GOFLAGS="" \
     go-licenses save \
