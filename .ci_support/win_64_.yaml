@@ -12,3 +12,5 @@ target_goexe:
 - .exe
 target_platform:
 - win-64
+yarn:
+- '3'

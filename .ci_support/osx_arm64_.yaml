@@ -16,3 +16,5 @@ target_goexe:
 - ''
 target_platform:
 - osx-arm64
+yarn:
+- '3'
