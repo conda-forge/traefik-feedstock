@@ -19,8 +19,7 @@ cd "src/${module}"
 go mod vendor
 
 pushd webui
-    rm yarn.lock
-    yarn
+    yarn --ignore-scripts
     yarn build:nc
 popd
 
