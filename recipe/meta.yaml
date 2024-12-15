@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('go') }}
     - go-licenses
     - make
-    - nodejs 22.*
+    - nodejs
     - yarn
 
 test:
