@@ -10,7 +10,5 @@ go_compiler:
 - go-nocgo
 nodejs:
 - '22'
-target_goexe:
-- ''
 target_platform:
 - linux-64

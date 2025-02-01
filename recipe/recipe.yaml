@@ -30,7 +30,7 @@ requirements:
 tests:
   - script:
       - traefik${{ target_goexe }} version
-      - traefik${{ target_goexe }} version | grep -iE  "Version:\s+${{ version | replace(".", "\.") }}$"
+      - traefik${{ target_goexe }} version | grep -iE  "Version:\s+${{ version | replace(".", "\\.") }}$"
       - traefik${{ target_goexe }} --help
 
 about:
