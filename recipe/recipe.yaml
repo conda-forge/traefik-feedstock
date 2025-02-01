@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - ${{ compiler('go') }}
+    - ${{ stdlib("c") }}
     - go-licenses
     - nodejs
     - yarn >=1.22.22,<2
