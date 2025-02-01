@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 3.3.3
+
+package:
+  name: traefik
+  version: ${{ version }}
+
+source:
+  url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz
+  sha256: bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec
+  target_directory: src/github.com/traefik/traefik
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('go') }}
+    - go-licenses
+    - nodejs
+    - yarn >=1.22.22,<2
+  ignore_run_exports:
+    by_name:
+      - nodejs
+      - yarn
+
+tests:
+  - script:
+      - traefik${{ target_goexe }} version
+      - traefik${{ target_goexe }} version | grep -iE  "Version:\s+${{ version | replace(".", "\.") }}$"
+      - traefik${{ target_goexe }} --help
+
+about:
+  license: MIT
+  license_file:
+    - src/github.com/traefik/traefik/LICENSE.md
+    - library_licenses/
+  summary: The Cloud Native Application Proxy
+  description: |
+    Traefik (pronounced traffic) is a modern HTTP reverse proxy and load balancer
+    that makes deploying microservices easy. Traefik integrates with your existing
+    infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,
+    Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.
+    Pointing Traefik at your orchestrator should be the only configuration step you need.
+  homepage: https://traefik.io
+  repository: https://github.com/traefik/traefik
+  documentation: https://doc.traefik.io/traefik
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
+    - sodre
