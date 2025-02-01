@@ -3,7 +3,7 @@ About traefik-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/traefik-feedstock/blob/main/LICENSE.txt)
 
-Home: https://traefik.io
+Home: https://traefik.io/
 
 Package license: MIT
 
@@ -18,7 +18,6 @@ that makes deploying microservices easy. Traefik integrates with your existing
 infrastructure components (Docker, Swarm mode, Kubernetes, Consul, Etcd,
 Rancher v2, Amazon ECS, ...) and configures itself automatically and dynamically.
 Pointing Traefik at your orchestrator should be the only configuration step you need.
-
 
 Current build status
 ====================
