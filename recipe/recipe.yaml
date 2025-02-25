@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 3.3.3
+  version: "3.3.4"
 
 package:
   name: traefik
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz
-  sha256: bd08e63a919e90afb171d6df8ac4a426e309d6df6853c92657bded2da805dbec
+  sha256: a176bd59d1b49e3e88c86fb21bf8ac7190f60d41ecefa10b46edf7687f3a4e09
   target_directory: src/github.com/traefik/traefik
 
 build:
