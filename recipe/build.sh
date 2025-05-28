@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-set -eux
+set -eux -o pipefail
 
-# uses about 2gb
-export TMPDIR="$( pwd )/tmp"
-mkdir -p "${TMPDIR}"
-
-export GOPATH="$( pwd )"
+_GOPATH="$( pwd )"
+export GOPATH="${_GOPATH}"
 export GOFLAGS="-buildmode=pie -trimpath -mod=vendor -modcacherw -ldflags=-linkmode=external"
 
 module='github.com/traefik/traefik'
