@@ -10,7 +10,7 @@ module='github.com/traefik/traefik'
 cd "src/${module}"
 
 pushd webui
-    yarn --ignore-scripts
+    yarn
     yarn build:nc
 popd
 
