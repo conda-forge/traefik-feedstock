@@ -21,7 +21,7 @@ requirements:
     - ${{ compiler('go') }}
     - go-licenses
     - nodejs 22.*
-    - yarn >=1.22.22,<2
+    - yarn 4.9.1.*
     - if: not target_goexe == ".exe"
       then:
         - ${{ stdlib("c") }}
