@@ -11,7 +11,7 @@ cd "src/${module}"
 
 pushd webui
     yarn
-    yarn build:nc
+    yarn build
 popd
 
 go mod vendor
