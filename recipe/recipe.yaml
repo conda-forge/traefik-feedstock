@@ -14,7 +14,7 @@ source:
   target_directory: src/github.com/traefik/traefik
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -22,15 +22,15 @@ requirements:
     - go-licenses
     - nodejs 22.*
     - yarn 4.9.1.*
-    - if: not target_goexe == ".exe"
+    - if: not win
       then:
         - ${{ stdlib("c") }}
 
 tests:
   - script:
-      - traefik${{ target_goexe }} version
-      - traefik${{ target_goexe }} version | grep -iE  "Version:\s+${{ version | replace(".", "\\.") }}$"
-      - traefik${{ target_goexe }} --help
+      - traefik version
+      - traefik version | grep -iE  "Version:\s+${{ version | replace(".", "\\.") }}$"
+      - traefik --help
 
 about:
   license: MIT
