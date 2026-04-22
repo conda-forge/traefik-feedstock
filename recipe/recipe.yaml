@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.6.13"
+  version: "3.6.14"
 
 package:
   name: traefik
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz
-  sha256: 4691ea5e277c7a074c5296881c8b57027bbccf1b831e0ac3802a2e559e9e964d
+  sha256: c7874ff6e7ab290b8391e675a2a3b889be85899978adbb8f0c804a1baf888f18
   target_directory: src/github.com/traefik/traefik
 
 build:
@@ -18,7 +18,7 @@ build:
 
 requirements:
   build:
-    - ${{ compiler('go') }}
+    - ${{ compiler("go") }}
     - go-licenses
     - nodejs 22.*
     - yarn 4.9.1.*

@@ -1,8 +1,6 @@
 azure:
   free_disk_space: true
 build_platform:
-  osx_arm64: osx_64
-  linux_aarch64: linux_64
   linux_ppc64le: linux_64
   win_64: linux_64
 conda_build:
@@ -16,3 +14,6 @@ github:
 shellcheck:
   enabled: true
 test: native_and_emulated
+provider:
+  linux_aarch64: default
+  osx_arm64: default

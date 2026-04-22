@@ -5,11 +5,11 @@
 
 [workspace]
 name = "traefik-feedstock"
-version = "3.58.1"  # conda-smithy version used to generate this file
+version = "3.61.0"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/traefik-feedstock"
 authors = ["@conda-forge/traefik"]
 channels = ["conda-forge"]
-platforms = ["linux-64", "osx-64", "win-64"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
 requires-pixi = ">=0.59.0"
 
 [dependencies]
@@ -77,7 +77,7 @@ description = "Lint the feedstock recipe"
 
 [feature.shellcheck]
 dependencies.shellcheck = "*"
-platforms = ["linux-64", "osx-64", "win-64"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
 
 [environments]
 smithy = ["shellcheck", "smithy"]
