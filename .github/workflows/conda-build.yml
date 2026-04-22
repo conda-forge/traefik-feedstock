@@ -39,7 +39,7 @@ jobs:
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
           - CONFIG: win_64_
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
