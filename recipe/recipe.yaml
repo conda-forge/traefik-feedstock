@@ -18,7 +18,7 @@ build:
 
 requirements:
   build:
-    - ${{ compiler('go') }}
+    - ${{ compiler("go") }}
     - go-licenses
     - nodejs 22.*
     - yarn 4.9.1.*
