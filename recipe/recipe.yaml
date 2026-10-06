@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.7.13"
+  version: "3.7.14"
 
 package:
   name: traefik
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz
-  sha256: a4c57bb9b68514075dd849f79354cf9c4b860be9330ece85ac8dad5372b82444
+  sha256: a5c89da12e74890a2b3aeecf46756ee853a6e8c1e9e27a04fa1ebdaefc68d4ce
   target_directory: src/github.com/traefik/traefik
 
 build:
@@ -20,13 +20,19 @@ requirements:
   build:
     - ${{ compiler("go") }}
     - go-licenses
-    - nodejs 22.*
-    - yarn 4.9.1.*
+    # from `webui/buildx.Dockerfile`
+    - nodejs 24.*
+    # from `webui/package.json:packageManager`
+    - yarn 4.18.0.*
     - if: not win
       then:
         - ${{ stdlib("c") }}
 
 tests:
+  - package_contents:
+      strict: true
+      bin:
+        - traefik
   - script:
       - traefik version
       - traefik version | grep -iE  "Version:\s+${{ version | replace(".", "\\.") }}$"
