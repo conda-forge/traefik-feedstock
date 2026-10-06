@@ -20,13 +20,19 @@ requirements:
   build:
     - ${{ compiler("go") }}
     - go-licenses
-    - nodejs 22.*
-    - yarn 4.9.1.*
+    # from `webui/buildx.Dockerfile`
+    - nodejs 24.*
+    # from `webui/package.json:packageManager`
+    - yarn 4.18.0.*
     - if: not win
       then:
         - ${{ stdlib("c") }}
 
 tests:
+  - package_contents:
+      strict: true
+      bin:
+        - traefik
   - script:
       - traefik version
       - traefik version | grep -iE  "Version:\s+${{ version | replace(".", "\\.") }}$"
