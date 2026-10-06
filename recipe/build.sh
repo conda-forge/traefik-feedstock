@@ -10,7 +10,7 @@ module='github.com/traefik/traefik'
 cd "src/${module}"
 
 pushd webui
-    yarn
+    yarn workspaces focus --all --production
     yarn build
 popd
 
