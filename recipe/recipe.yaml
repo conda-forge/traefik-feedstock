@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.7.16"
+  version: "3.7.17"
 
 package:
   name: traefik
@@ -10,10 +10,14 @@ package:
 
 source:
   url: https://github.com/traefik/traefik/releases/download/v${{ version }}/traefik-v${{ version }}.src.tar.gz
-  sha256: 3143af8f5e5e624477d6a5ea2dbaae656c6bd0ed700af1de671be32dab06c173
+  sha256: 9de1ea034a359985bfd948a27d1dc48661ed9cd6c80d266ba6e6f41c3bc10dd9
   target_directory: src/github.com/traefik/traefik
 
 build:
+  skip:
+    # #85: `traefik version` segfaults
+    #      see https://github.com/conda-forge/traefik-feedstock/issues/86
+    - target_platform == "linux-ppc64le"
   number: 0
 
 requirements:
