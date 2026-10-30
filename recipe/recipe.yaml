@@ -14,6 +14,10 @@ source:
   target_directory: src/github.com/traefik/traefik
 
 build:
+  skip:
+    # #85: `traefik version` segfaults
+    #      see https://github.com/conda-forge/traefik-feedstock/issues/86
+    - target_platform == "linux-ppc64le"
   number: 0
 
 requirements:
